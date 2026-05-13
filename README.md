@@ -123,6 +123,7 @@ helm version
 Install from:
 
 [Helm Official Website](https://helm.sh/docs/intro/install/?utm_source=chatgpt.com)
+<img width="1710" height="1107" alt="Screenshot 2026-05-13 at 10 03 33 PM" src="https://github.com/user-attachments/assets/3e38052f-0b47-4cb7-8b5f-312df4542bcc" />
 
 ---
 
@@ -146,6 +147,9 @@ eksctl create cluster \
 * Fargate support
 
 Expected time: **10–15 minutes**
+<img width="1710" height="1107" alt="Screenshot 2026-05-13 at 10 02 04 PM" src="https://github.com/user-attachments/assets/49958050-dd8e-48f4-b099-88a7d5e55bca" />
+<img width="1710" height="1107" alt="Screenshot 2026-05-13 at 10 55 35 PM" src="https://github.com/user-attachments/assets/1ccb1412-ca15-4234-9b8f-6d3efdd1bf0d" />
+
 
 ---
 
@@ -164,6 +168,8 @@ kubectl get nodes
 ```
 
 Since this project uses Fargate, traditional worker nodes may not appear.
+<img width="1710" height="1107" alt="Screenshot 2026-05-13 at 10 05 20 PM" src="https://github.com/user-attachments/assets/42b2193a-c5a4-4687-a0dc-8b3b36bf48ab" />
+
 
 ---
 
@@ -180,6 +186,7 @@ eksctl create fargateprofile \
 ```
 
 This ensures your application pods run on Fargate.
+<img width="1710" height="1107" alt="Screenshot 2026-05-13 at 10 55 49 PM" src="https://github.com/user-attachments/assets/cf9415f5-7dba-4cf5-8379-8a2555db1bfd" />
 
 ---
 
@@ -205,6 +212,8 @@ kubectl get pods -n game-2048
 kubectl get svc -n game-2048
 kubectl get ingress -n game-2048
 ```
+<img width="1710" height="1107" alt="Screenshot 2026-05-13 at 10 15 48 PM" src="https://github.com/user-attachments/assets/7254a58a-c753-428a-806f-0cb274bbf263" />
+
 
 At this point:
 
@@ -228,8 +237,6 @@ eksctl utils associate-iam-oidc-provider \
   --approve \
   --region us-east-1
 ```
-
----
 
 # Step 6: Create IAM Service Account
 
@@ -255,6 +262,7 @@ Verify:
 ```bash
 kubectl describe sa aws-load-balancer-controller -n kube-system
 ```
+<img width="1710" height="1107" alt="Screenshot 2026-05-13 at 10 27 58 PM" src="https://github.com/user-attachments/assets/b5d346c6-dc3a-4b76-8d29-b3a92d6ffa68" />
 
 ---
 
@@ -279,6 +287,7 @@ deployment/cert-manager-webhook \
 -n cert-manager \
 --timeout=300s
 ```
+<img width="1710" height="1107" alt="Screenshot 2026-05-13 at 10 48 00 PM" src="https://github.com/user-attachments/assets/96052b61-2047-40c6-971c-e4f7fd2b4095" />
 
 ---
 
@@ -351,6 +360,7 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
   --set region=us-east-1 \
   --set vpcId=$VPC_ID
 ```
+<img width="1710" height="1107" alt="Screenshot 2026-05-13 at 11 04 09 PM" src="https://github.com/user-attachments/assets/47a359bc-727a-4d1e-9526-e5adf19c8866" />
 
 ---
 
@@ -365,6 +375,7 @@ Wait until:
 ```plaintext
 AVAILABLE = 1
 ```
+<img width="1710" height="1107" alt="Screenshot 2026-05-13 at 10 56 09 PM" src="https://github.com/user-attachments/assets/0745caa2-cbc0-47ec-8f1b-04458b947811" />
 
 ---
 
@@ -381,6 +392,8 @@ After 2–3 minutes:
 ```plaintext
 xxxxxxxxxx.us-east-1.elb.amazonaws.com
 ```
+<img width="1710" height="1107" alt="Screenshot 2026-05-13 at 10 58 49 PM" src="https://github.com/user-attachments/assets/c8594a4d-c40e-4eba-93a7-8e23ed776259" />
+<img width="1710" height="1107" alt="Screenshot 2026-05-13 at 11 03 37 PM" src="https://github.com/user-attachments/assets/58815928-f9c5-49ef-9faf-7eea9727a7df" />
 
 Copy the URL and open it in your browser.
 
