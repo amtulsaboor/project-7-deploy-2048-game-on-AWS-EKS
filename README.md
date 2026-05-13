@@ -14,6 +14,7 @@ This project covers:
 * Tagging public subnets
 * Installing AWS Load Balancer Controller
 * Accessing application through ALB
+<img width="1710" height="1107" alt="Screenshot 2026-05-13 at 11 03 37 PM" src="https://github.com/user-attachments/assets/51d4039d-41ce-40fd-a33f-162ebe275636" />
 
 ---
 
